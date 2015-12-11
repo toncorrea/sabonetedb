@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <table id="tableMaterias" border="10">
+    	<% if( materias.length > 0 ){ %>
+      	<tr>
+          <td>ID</td>
+      		<td>Nome</td>
+      	</tr>
+      	<% for(i=0; i<materias.length; i++){ %>
+      	  <% var a = materias[i]; %>
+      	  <tr>
+            <td><%= a.id %></td>
+      		  <td><%= a.nome %></td>
+      	  </tr>
+      	<% } %>
+      <% } else { %>
+        Nenhum dado
+      <% } %>
+    </table>
+  </body> 
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript">
+    function lista(){
+    	window.location = "/lista";
+    }
+    </script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <input type="button" onclick="lista()">
+    <form action="/salvar" method="post">
+    	nome:<br>
+    	<input type="text" name="nome" id="nome" required><br><br>
+    	<input type="submit" value="salvar">
+    </form>
+  </body> 
+</html>
