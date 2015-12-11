@@ -1,0 +1,9 @@
+linha de raciocinio para alteração;
+1 = clicar no href enviando como parametro o id de dentro do array para a rota /alterar
+2 = criar uma instancia de MateriaPrima;
+3 = criar uma variavel para representar a tabela no banco de dados,
+4 = criar um for para encontrar o item dentro do array;
+5 = apos encontrar enviar para o req.body.nome através do query;
+6 = escrever por cima do req.body.nome e enviar para a instancia;
+7 = apos enviar o valor com a instancia o this.nome deve ter o valor nome desejado;
+8 = criar uma variavel para receber esse valor e jogar no db.cnn.exec;

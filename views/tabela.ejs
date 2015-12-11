@@ -3,6 +3,8 @@
   <head>
     <title></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript">
+    </script>
   </head>
   <body>
     <table id="tableMaterias" border="10">
@@ -16,6 +18,7 @@
       	  <tr>
             <td><%= a.id %></td>
       		  <td><%= a.nome %></td>
+            <td><a href="/alterar?id=<% a.id %>">Editar</a></td>
       	  </tr>
       	<% } %>
       <% } else { %>

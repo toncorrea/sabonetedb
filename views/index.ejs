@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Estoque</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script type="text/javascript">
-    function lista(){
-    	window.location = "/lista";
+    function listar(id){
+      c = parseInt(id);
+      window.location = '../editar?id='+c;
+    }
+
+    function excluir(id){
+      c = parseInt(id);
+      window.location = '../buscar?id='+c;
     }
     </script>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <input type="button" onclick="lista()">
+    <h1>Estoque</h1>
     <form action="/salvar" method="post">
     	nome:<br>
-    	<input type="text" name="nome" id="nome" required><br><br>
-    	<input type="submit" value="salvar">
+      <input type="text" name="nome" id="nome" required><br><br>
+    	<input type="hidden" name="id" id="id" required>
+      <input type="submit" value="salvar" >
     </form>
+      <table id="tableMaterias" border="10">
+      <% if( materias.length > 0 ){ %>
+        <tr>
+          <td>ID</td>
+          <td>Nome</td>
+        </tr>
+        <% for(i=0; i<materias.length; i++){ %>
+          <% var a = materias[i]; %>
+          <tr>
+            <td><%= a.id %></td>
+            <td><%= a.nome %></td>
+            <td><a href="javascript:void(0);" onclick="listar(<%= a.id %>);">Editar</a></td>
+            <td><a href="javascript:void(0);" onclick="excluir(<%= a.id %>);">Excluir</a></td>
+          </tr>
+        <% } %>
+      <% } else { %>
+        Nenhum dado
+      <% } %>
+    </table>
   </body> 
 </html>
